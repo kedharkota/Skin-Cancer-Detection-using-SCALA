@@ -1,0 +1,30 @@
+# JVM conf# Spark RPC Configuration
+-Dspark.rpc.message.maxSize=2047
+-Dspark.rpc.askTimeout=600s
+-Dspark.network.timeout=800s
+-Dspark.sql.execution.arrow.maxRecordsPerBatch=10000tion for SkinCancerApp
+# These options will be applied when starting the application
+
+# Hadoop RPC Configuration
+-Dipc.maximum.data.length=536870912
+-Dipc.server.max.response.size=536870912
+-Dhadoop.ipc.client.connection.maxidletime=10000
+-Dhadoop.ipc.client.connect.timeout=60000
+-Dhadoop.ipc.client.connect.max.retries=50
+
+# Spark RPC Configuration
+-Dspark.rpc.message.maxSize=1024
+-Dspark.rpc.askTimeout=600s
+-Dspark.network.timeout=800s
+-Dspark.sql.execution.arrow.maxRecordsPerBatch=10000
+
+# Memory settings
+-Xmx8g
+-Xms2g
+
+# GC settings for better performance with large data
+-XX:+UseG1GC
+-XX:MaxGCPauseMillis=200
+-XX:ParallelGCThreads=20
+-XX:ConcGCThreads=5
+-XX:InitiatingHeapOccupancyPercent=70
